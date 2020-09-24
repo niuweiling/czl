@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>有求必应-车主必备</title>
+  <script>
+    let isAdd = true
+    let item = 'https://g.alicdn.com/tmapp/tida/3.3.59/tida.js?appkey='
+    let src = ''
+    if (window.location.hostname == 'njdbh5.ewszjk.m.jaeapp.com') { // 代办测试
+      src = item + '27517029'
+    } else if (window.location.hostname == 'agent.ewszjk.m.jaeapp.com') { // 代办正式
+      src = item + '27770705'
+    } else if (window.location.hostname == 'fddjweb.ewszjk.m.jaeapp.com') { // 罚单代缴正式
+      src = item + '27486447'
+    } else {
+      isAdd = false
+    }
+    if (isAdd) {
+      let jsapi = document.createElement('script');
+      jsapi.charset = 'utf-8';
+      jsapi.type = "text/javascript";
+      jsapi.src = src;
+      let node = document.head.children;
+      document.head.insertBefore(jsapi, node[0]);
+      // document.head.append(jsapi)
+    }
+  </script>
+</head>
+
+<body>
+  <!-- <noscript>
+      <strong>We're sorry but hello-world doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript> -->
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<!-- <script src="//g.alicdn.com/tmapp/tida/3.3.59/tida.js?appkey=27770705"></script> -->
+<!-- test: 27517029  prod: 27770705-->
+<!-- <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1277965500&web_id=1277965500"></script> -->
+
+</html>

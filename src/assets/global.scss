@@ -1,0 +1,40 @@
+@import 'rest.scss';
+$fontSize: 37.5;
+$bs: #395EF4;
+$bf: #395EF4;
+$bgc: #F2F1F6;
+
+@function p2r($px) {
+    @return ($px/$fontSize)+rem;
+}
+
+@function ptr($px) {
+    @return ($px/2/$fontSize)+rem;
+}
+
+@mixin center() {
+    display: flex;
+    justify-content: center;
+    // algin-items: center
+    align-items: center;
+}
+
+@mixin showPoint() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin base_background() {
+    background: $bs;
+}
+
+@mixin base_border {
+    border-width: p2r(1);
+    border-style: solid;
+    border-color: $bf;
+}
+
+@mixin base_color() {
+    color: $bf;
+}
